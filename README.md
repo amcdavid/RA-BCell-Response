@@ -17,6 +17,7 @@ data(radedup)
 data(radup)
 
 ```
+These objects are lists of length 3, containing members `exprs` (expression array -- RSEM expected counts), `cData` (cellular metadata), `fData` (feature/gene metadat).
 
 If you aren't running R, you can browse under
 `RSEM Tables/` to find the pre- and post- deduplicated TPM and count tables.
