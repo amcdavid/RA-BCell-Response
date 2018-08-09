@@ -1,0 +1,51 @@
+1  of  1 :  data-raw/datasets.R 
+  |                                                                         |                                                                 |   0%  |                                                                         |....                                                             |   7%
+label: library (with options) 
+List of 1
+ $ error: logi FALSE
+
+  |                                                                         |.........                                                        |  13%
+  ordinary text without R code
+
+  |                                                                         |.............                                                    |  20%
+label: loadDedup (with options) 
+List of 1
+ $ error: logi FALSE
+
+  |                                                                         |.................                                                |  27%
+  ordinary text without R code
+
+  |                                                                         |......................                                           |  33%
+label: unnamed-chunk-1
+  |                                                                         |..........................                                       |  40%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  47%
+label: unnamed-chunk-2
+  |                                                                         |...................................                              |  53%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: loadDup (with options) 
+List of 1
+ $ error: logi FALSE
+
+  |                                                                         |...........................................                      |  67%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  73%
+label: unnamed-chunk-3
+  |                                                                         |....................................................             |  80%
+  ordinary text without R code
+
+  |                                                                         |........................................................         |  87%
+label: unnamed-chunk-4
+  |                                                                         |.............................................................    |  93%
+  ordinary text without R code
+
+  |                                                                         |.................................................................| 100%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ eval: logi FALSE
+
+

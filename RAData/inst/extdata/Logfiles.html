@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<pre><code class="r">library(data.table)
+library(stringr)
+dataDir &lt;- &#39;../inst/extdata&#39; #count tables live here
+idMaybe &lt;- c(&#39;F&#39;, &#39;R1&#39;, &#39;R48&#39;, &#39;R26&#39;, &#39;R4&#39;, &#39;R59&#39;, &#39;R72&#39;)
+idMaybeRE &lt;- paste0(&#39;(&#39;, paste0(idMaybe, collapse=&#39;|&#39;), &#39;)&#39;)
+treatmentMaybe &lt;- c(&#39;AG&#39;, &#39;CIT&#39;, &#39;RF&#39;)
+treatmentMaybeRE &lt;- paste0(&#39;(&#39;, paste0(treatmentMaybe, collapse=&#39;|&#39;), &#39;)&#39;)
+
+## Convert counts into counts per million
+cpmfun &lt;- function(ee){
+    cpm &lt;- ee/rowSums(ee, na.rm=TRUE)*1e6
+    log2(cpm+1)
+}
+
+## Remove deduplicate files 
+normalizeFiles &lt;- function(files){
+    ## detect _f_ deduplicates and remove
+    filebase &lt;- str_replace(files, &#39;_f&#39;, &#39;&#39;)
+    filef &lt;- str_detect(files, &#39;_f&#39;)
+    dtfile &lt;- data.table(files, filebase, filef)
+    dtfile[,N:=.N,keyby=filebase]
+    ## is a singleton or is not _f_
+    dtfile[N==1 | (N&gt;1 &amp; filef), files]
+}
+
+## Concatenate expression matrices, and cell data
+## Intersect features
+loadFilesIntoMast &lt;- function(files, normalize=function(x) x, maxGeneId=48424){
+    ncells &lt;- ifelse(str_detect(files, &#39;Bulk&#39;), 1000, 1)
+    ## Manually added columns treatment and iid to this file...need to update this as new samples come in if their naming pattern doesn&#39;t match
+    sampleSheet &lt;- fread(file.path(dataDir, &#39;sampleSheet3.csv&#39;), colClasses=c(&#39;subtype&#39;=&#39;character&#39;, &#39;wellID&#39;=&#39;character&#39;))
+
+    geneid &lt;- Cdat &lt;- EE &lt;- vector(&#39;list&#39;, length=length(files))
+    for( i in seq_along(files)){
+        ff &lt;- fread(files[[i]])
+        setkey(ff, gene_id)
+        ## genes present in file i
+        geneid[[i]] &lt;- as.vector(ff[,gene_id])
+        ## take outer join
+        ff &lt;- ff[list(seq_len(maxGeneId)),,nomatch=NA]
+        ## delete extra columns if present
+        suppressWarnings(ff[, &#39;:=&#39;(entrez_id=NULL, transcript_id=NULL, gene_symbol=NULL)])
+        mat &lt;- ff[,-1,with=FALSE]
+        ee &lt;- normalize(t(mat))
+        sampid &lt;- rownames(ee)
+        this.ncells &lt;- ncells[i]
+        if(this.ncells==1){
+            ## pull rawid (contains id and treatment) and wellID
+            cdat &lt;- data.frame(str_split_fixed(sampid, &#39;_&#39;, 2), stringsAsFactors=FALSE)
+            names(cdat) &lt;- c(&#39;rawid&#39;, &#39;wellID&#39;)
+            cdat$rawid &lt;- toupper(cdat$rawid)
+            idmaybe &lt;- str_match(cdat$rawid, idMaybeRE)[,2]
+            treatmaybe &lt;- str_match(cdat$rawid, treatmentMaybeRE)[,2]
+            if(all(!is.na(idmaybe))){
+                cdat$id &lt;- idmaybe
+                if(all(!is.na(treatmaybe))){
+                    cdat$treatment &lt;- treatmaybe
+                } else{
+                    cdat$treatment &lt;- &#39;AG&#39;
+                }
+            }
+            ## else leave null and fill in from sampleSheet
+            ## cdat$treatment &lt;- idtreat[,3]
+            ## cdat$treatment[is.na(cdat$treatment)] &lt;- &#39;AG&#39;
+        } else{
+            cdat &lt;- data.frame(str_split_fixed(sampid, &#39;_&#39;, 3), stringsAsFactors=FALSE)
+            names(cdat) &lt;- c(&#39;rawid&#39;, &#39;subtype&#39;, &#39;wellID&#39;)
+        }
+            cdat$ncells &lt;- this.ncells
+            cdat$file &lt;- basename(files[[i]])
+            cdat$idx &lt;- 1:nrow(cdat)
+        cdat2 &lt;- merge(cdat, sampleSheet, all.x=TRUE)
+        setorder(cdat2, idx)
+        cdat2$wellKey &lt;- with(cdat2, paste(rawid, id, subtype, wellID, sep=&#39;:&#39;))
+        cdat2$idx &lt;- NULL
+        rownames(ee) &lt;- cdat2$wellKey
+        EE[[i]] &lt;- ee
+        Cdat[[i]] &lt;- cdat2
+    }
+    geneidmin &lt;- geneid[[1]]
+    for(i in seq_along(files)){
+        geneidmin &lt;- intersect(geneidmin, geneid[[i]])
+    }
+
+    ##dt &lt;- data.table(t(sapply(EE, dim)), files)
+    for(i in seq_along(files)){
+        EE[[i]] &lt;- EE[[i]][,geneidmin]
+    }
+    EE &lt;- do.call(rbind, EE)
+    stopifnot(all(!is.na(EE)))
+    Cdat &lt;- do.call(rbind, Cdat)
+
+
+    litGenes &lt;- fread(file.path(dataDir, &#39;Subset genes.csv&#39;))[, 1:4, with=FALSE]
+    setnames(litGenes, c(&#39;naive&#39;, &#39;memory&#39;, &#39;asc&#39;, &#39;cd3&#39;))
+    litGenes &lt;- melt.data.table(litGenes, measure.vars=names(litGenes))[!is.na(value),]
+    setnames(litGenes, &#39;value&#39;, &#39;gene_id&#39;)
+    litGenes &lt;- litGenes[,list(litSubtype=paste(variable, collapse=&#39;:&#39;)),keyby=list(gene_id)]
+    genetable &lt;- fread(file.path(dataDir, &#39;RSEM Tables&#39;, &#39;Post-deduplication RSEM&#39;, &#39;Bulk&#39;, &#39;rsem_fdata.csv&#39;))
+    setkey(genetable, gene_id)
+    geneid &lt;- genetable[list(geneidmin),]
+    geneid[,symbolOrIdx:=make.names(gene_symbol)]
+    geneid[is.na(gene_symbol),symbolOrIdx:=paste0(&#39;p&#39;,as.character(gene_id))]
+    geneid[,entrezOrIdx:=paste0(&#39;EN&#39;, entrez_id)]
+    geneid[is.na(entrez_id),entrezOrIdx:=paste0(&#39;p&#39;,as.character(gene_id))]
+    geneid &lt;- merge(geneid, litGenes, by=&#39;gene_id&#39;, all.x=TRUE)
+
+    btmGenes &lt;- gdata::read.xls(file.path(dataDir, &#39;btm_annotation_table_InterestingModules 2016-05-27.xls&#39;), as.is=TRUE)
+    setDT(btmGenes)
+    btmGenes[,Interest:=factor(Interest, levels=c(&#39;veryhigh&#39;, &#39;high&#39;, &#39;medium&#39;, &#39;low&#39;))]
+    btmGenesFlat &lt;- btmGenes[,{
+    genelist &lt;- str_split(Module.member.genes, fixed(&#39;,&#39;))[[1]]
+    ng &lt;- length(genelist)
+    .(Interest=rep(Interest, ng), ID=rep(ID, ng), Module.title=rep(Module.title, ng), gene_symbol=genelist)
+    },by=.(seq_len(nrow(btmGenes)))]
+    setorder(btmGenesFlat, gene_symbol, Interest)
+    setkey(btmGenesFlat, gene_symbol)
+    ordered &lt;- merge(geneid, unique(btmGenesFlat[,.(gene_symbol, Interest, ID, Module.title)]),by.y=&#39;gene_symbol&#39;, by.x=&#39;symbolOrIdx&#39;, all.x=TRUE)
+    geneid &lt;- ordered[gene_id %in% geneidmin]
+    setorder(geneid, gene_id)
+    stopifnot(nrow(geneid)==ncol(EE))
+    fVars &lt;- geneid[, symbolOrIdx]
+    geneset &lt;- split(seq_along(fVars), fVars)
+    fdOrder &lt;- order(unlist(lapply(geneset, min)))
+    geneset &lt;- geneset[fdOrder]
+    genefirst &lt;- unlist(lapply(geneset, function(x) x[1]))
+    skeleton &lt;- EE[,genefirst]
+    exprs.orig &lt;- EE
+    exprs.new &lt;- lapply(geneset, function(colidx) {
+        cols &lt;- exprs.orig[, colidx, drop = FALSE]
+        rowSums(cols)
+    })
+    ## This sets the colnames to names(exprs.new), hence symbolOrIdx
+    EE.new &lt;- do.call(cbind, exprs.new)
+    geneid[,primerid:=symbolOrIdx]
+    ## sort the fvars
+    geneid &lt;- geneid[genefirst,]
+
+    stopifnot(all(abs(rowSums(EE.new)-rowSums(EE))&lt;.01))
+
+    Cdat$ngeneson &lt;- rowSums(EE.new&gt;0)
+    Cdat$wellKey &lt;- make.unique(Cdat$wellKey)
+    Cdat$counts &lt;- rowSums(EE.new)
+
+    isotype_files &lt;- list.files(file.path(dataDir, &#39;IGHC Counts&#39;), pattern=&quot;*.csv&quot;, full.names=TRUE)
+    itf &lt;- str_match(list.files(file.path(dataDir, &#39;IGHC Counts&#39;), pattern=&quot;*.csv&quot;), &#39;[A-Za-z0-9]+&#39;)
+    names(isotype_files) &lt;- itf
+    #isotype_cw &lt;- data.table(fname=itf, id=str_c(&#39;R&#39;, str_match(itf, &#39;[0-9]+&#39;)), treatment=str_match(itf, &#39;a|r|c&#39;))
+    isotype_cw &lt;- data.table(fname=c(&quot;1a&quot;, &quot;235&quot;, &quot;26a&quot;, &quot;26c&quot;, &quot;26r&quot;, 
+                                     &quot;48a&quot;, &quot;48c&quot;, &quot;4a&quot;, &quot;4r&quot;, &quot;59a&quot;, &quot;59c&quot;, &quot;59r&quot;, &quot;72a&quot;, &quot;72c&quot;, 
+                                     &quot;72r&quot;, &quot;Fa&quot;),
+                             id = c(&quot;R1&quot;, &quot;F&quot;, &quot;R26&quot;, &quot;R26&quot;, &quot;R26&quot;, &quot;R48&quot;, 
+                                    &quot;R48&quot;, &quot;R4&quot;, &quot;R4&quot;, &quot;R59&quot;, &quot;R59&quot;, &quot;R59&quot;, &quot;R72&quot;, &quot;R72&quot;, &quot;R72&quot;, &#39;F&#39;),
+                             treatment = c(&quot;AG&quot;, &#39;none&#39;, &quot;AG&quot;, &quot;CIT&quot;, &quot;RF&quot;, &quot;AG&quot;, &quot;CIT&quot;, &quot;AG&quot;, 
+                                           &quot;RF&quot;, &quot;AG&quot;, &quot;CIT&quot;, &quot;RF&quot;, &quot;AG&quot;, &quot;CIT&quot;, &quot;RF&quot;, &quot;AG&quot;))
+
+    isotype &lt;- rbindlist(lapply(isotype_files, fread), fill=TRUE, idcol=&#39;fname&#39;)
+    isotype &lt;- merge(isotype, isotype_cw, by=&#39;fname&#39;)
+    isotype[,wellID:=str_match(cellID, &#39;[0-9]+$&#39;)]
+    Cdat &lt;- merge(Cdat, isotype, c(&#39;id&#39;, &#39;treatment&#39;, &#39;wellID&#39;), all.x=TRUE)
+    Cdat &lt;- Cdat[match(rownames(EE.new), Cdat$wellKey),]
+    stopifnot(all(Cdat$wellKey==row.names(EE.new)))
+    list(exprs=EE.new, cData=Cdat, fData=geneid)
+}
+</code></pre>
+
+<pre><code class="r">files &lt;- normalizeFiles(list.files(file.path(dataDir, &#39;RSEM Tables&#39;, &#39;Post-deduplication RSEM&#39;), pattern = &#39;rsem_count_matrix&#39;, full.names=TRUE, recursive=TRUE))
+radedup &lt;- loadFilesIntoMast(files)
+cd &lt;- as.data.table(radedup$cData)
+cd[is.na(id) | is.na(treatment)]
+</code></pre>
+
+<pre><code>## Empty data.table (0 rows) of 19 cols: id,treatment,wellID,rawid,subtype,ncells...
+</code></pre>
+
+<pre><code class="r">cd[!str_detect(rawid, fixed(id))]
+</code></pre>
+
+<pre><code>##      id treatment wellID rawid subtype ncells
+##   1:  F      none    304     M       M      1
+##   2:  F      none    305     M       M      1
+##   3:  F      none    306     M       M      1
+##   4:  F      none    307     M       M      1
+##   5:  F      none    312     M       M      1
+##                                     file   wellKey ngeneson    counts
+##   1: rsem_count_matrix_f_235sc_RSEM2.csv M:F:M:304      915   4731.76
+##   2: rsem_count_matrix_f_235sc_RSEM2.csv M:F:M:305      801  17054.09
+##   3: rsem_count_matrix_f_235sc_RSEM2.csv M:F:M:306     2289 170615.63
+##   4: rsem_count_matrix_f_235sc_RSEM2.csv M:F:M:307      501   2455.76
+##   5: rsem_count_matrix_f_235sc_RSEM2.csv M:F:M:312     1899  97562.28
+##      fname   cellID IgM IgD IgG IgE IgA Subset Isotype
+##   1:   235 235sc304   1   0   3   0   0      M       G
+##   2:   235 235sc305   0   0   0   0   4      M       A
+##   3:   235 235sc306   0   0   0   0   0      M unknown
+##   4:   235 235sc307   0   0   0   0   0      M unknown
+##   5:   235 235sc312   0   0   1   0   4      M       A
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 6 rows ]
+</code></pre>
+
+<pre><code class="r">cd[id==&#39;F&#39; &amp; is.na(subtype)]
+</code></pre>
+
+<pre><code>##      id treatment wellID rawid subtype ncells
+##   1:  F        AG    208     F      NA      1
+##   2:  F        AG    209     F      NA      1
+##   3:  F        AG    210     F      NA      1
+##   4:  F        AG    211     F      NA      1
+##   5:  F        AG    212     F      NA      1
+##                                     file    wellKey ngeneson     counts
+##   1: rsem_count_matrix_f_FCHAg_RSEM2.csv F:F:NA:208      624   11473.76
+##   2: rsem_count_matrix_f_FCHAg_RSEM2.csv F:F:NA:209      360    7620.00
+##   3: rsem_count_matrix_f_FCHAg_RSEM2.csv F:F:NA:210      173    2166.38
+##   4: rsem_count_matrix_f_FCHAg_RSEM2.csv F:F:NA:211      101    1307.60
+##   5: rsem_count_matrix_f_FCHAg_RSEM2.csv F:F:NA:212      163    1945.64
+##      fname cellID IgM IgD IgG IgE IgA Subset Isotype
+##   1:    Fa  Fa208   0   0  65   0   0     NA      NA
+##   2:    Fa  Fa209   0   0   0   0   0     NA      NA
+##   3:    Fa  Fa210   0   0   0   0   0     NA      NA
+##   4:    Fa  Fa211   0   0   0   0   0     NA      NA
+##   5:    Fa  Fa212   0   0   1   0   0     NA      NA
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 6 rows ]
+</code></pre>
+
+<p>Inferred IDs (deduplicated)</p>
+
+<pre><code class="r">kable(cd[,c(.SD[1,], nwells=.N),keyby=list(file, rawid)])
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left">file</th>
+<th align="left">rawid</th>
+<th align="left">id</th>
+<th align="left">treatment</th>
+<th align="left">wellID</th>
+<th align="left">subtype</th>
+<th align="right">ncells</th>
+<th align="left">wellKey</th>
+<th align="right">ngeneson</th>
+<th align="right">counts</th>
+<th align="left">fname</th>
+<th align="left">cellID</th>
+<th align="right">IgM</th>
+<th align="right">IgD</th>
+<th align="right">IgG</th>
+<th align="right">IgE</th>
+<th align="right">IgA</th>
+<th align="left">Subset</th>
+<th align="left">Isotype</th>
+<th align="right">nwells</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">rsem_count_matrix_f_235b_RSEM2.csv</td>
+<td align="left">235</td>
+<td align="left">235</td>
+<td align="left">none</td>
+<td align="left">217</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">235:235:M:217</td>
+<td align="right">13217</td>
+<td align="right">659931.39</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235b_RSEM2.csv</td>
+<td align="left">235-1</td>
+<td align="left">235</td>
+<td align="left">none</td>
+<td align="left">265</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">235-1:235:M:265</td>
+<td align="right">13028</td>
+<td align="right">793778.49</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM2.csv</td>
+<td align="left">M</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">304</td>
+<td align="left">M</td>
+<td align="right">1</td>
+<td align="left">M:F:M:304</td>
+<td align="right">915</td>
+<td align="right">4731.76</td>
+<td align="left">235</td>
+<td align="left">235sc304</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">M</td>
+<td align="left">G</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM2.csv</td>
+<td align="left">N</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">212</td>
+<td align="left">N</td>
+<td align="right">1</td>
+<td align="left">N:F:N:212</td>
+<td align="right">3096</td>
+<td align="right">140835.01</td>
+<td align="left">235</td>
+<td align="left">235sc212</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">N</td>
+<td align="left">M</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM2.csv</td>
+<td align="left">P</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">208</td>
+<td align="left">P</td>
+<td align="right">1</td>
+<td align="left">P:F:P:208</td>
+<td align="right">3970</td>
+<td align="right">385961.26</td>
+<td align="left">235</td>
+<td align="left">235sc208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">61</td>
+<td align="left">P</td>
+<td align="left">A</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM2.csv</td>
+<td align="left">T</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">308</td>
+<td align="left">T</td>
+<td align="right">1</td>
+<td align="left">T:F:T:308</td>
+<td align="right">2431</td>
+<td align="right">103116.91</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_832b_833b_withBTK_RSEM2.csv</td>
+<td align="left">832</td>
+<td align="left">832</td>
+<td align="left">none</td>
+<td align="left">281</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">832:832:M:281</td>
+<td align="right">12274</td>
+<td align="right">1326131.84</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_832b_833b_withBTK_RSEM2.csv</td>
+<td align="left">833</td>
+<td align="left">833</td>
+<td align="left">none</td>
+<td align="left">280</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">833:833:M:280</td>
+<td align="right">10808</td>
+<td align="right">652524.17</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_FCHAg_RSEM2.csv</td>
+<td align="left">F</td>
+<td align="left">F</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">F:F:NA:208</td>
+<td align="right">624</td>
+<td align="right">11473.76</td>
+<td align="left">Fa</td>
+<td align="left">Fa208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">65</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG1Ag_RSEM2.csv</td>
+<td align="left">R1</td>
+<td align="left">R1</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R1:R1:NA:208</td>
+<td align="right">2435</td>
+<td align="right">26941.42</td>
+<td align="left">1a</td>
+<td align="left">1a208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG26A_RSEM2.csv</td>
+<td align="left">R26AG</td>
+<td align="left">R26</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26AG:R26:NA:208</td>
+<td align="right">5280</td>
+<td align="right">445207.09</td>
+<td align="left">26a</td>
+<td align="left">26a208</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">46</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG26cit_RSEM2.csv</td>
+<td align="left">R26CIT</td>
+<td align="left">R26</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26CIT:R26:NA:208</td>
+<td align="right">4303</td>
+<td align="right">49531.28</td>
+<td align="left">26c</td>
+<td align="left">26c208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">109</td>
+<td align="right">12</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG26rf_RSEM2.csv</td>
+<td align="left">R26RF</td>
+<td align="left">R26</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26RF:R26:NA:208</td>
+<td align="right">2466</td>
+<td align="right">103553.29</td>
+<td align="left">26r</td>
+<td align="left">26r208</td>
+<td align="right">55</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG48Ag_RSEM2.csv</td>
+<td align="left">R48</td>
+<td align="left">R48</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R48:R48:NA:208</td>
+<td align="right">4405</td>
+<td align="right">101890.22</td>
+<td align="left">48a</td>
+<td align="left">48a208</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">189</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG48cit_RSEM2.csv</td>
+<td align="left">R48CIT</td>
+<td align="left">R48</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R48CIT:R48:NA:208</td>
+<td align="right">4144</td>
+<td align="right">87164.67</td>
+<td align="left">48c</td>
+<td align="left">48c208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">7</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">144</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG4Ag_RSEM2.csv</td>
+<td align="left">R4</td>
+<td align="left">R4</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R4:R4:NA:208</td>
+<td align="right">3976</td>
+<td align="right">118497.07</td>
+<td align="left">4a</td>
+<td align="left">4a208</td>
+<td align="right">185</td>
+<td align="right">0</td>
+<td align="right">42</td>
+<td align="right">0</td>
+<td align="right">22</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG4rf_RSEM2.csv</td>
+<td align="left">R4RF</td>
+<td align="left">R4</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R4RF:R4:NA:208</td>
+<td align="right">3020</td>
+<td align="right">291678.14</td>
+<td align="left">4r</td>
+<td align="left">4r208</td>
+<td align="right">86</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59A_RSEM2.csv</td>
+<td align="left">R59AG</td>
+<td align="left">R59</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59AG:R59:NA:208</td>
+<td align="right">3903</td>
+<td align="right">76911.79</td>
+<td align="left">59a</td>
+<td align="left">59a208</td>
+<td align="right">11</td>
+<td align="right">64</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59cit_RSEM2.csv</td>
+<td align="left">R59CIT</td>
+<td align="left">R59</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59CIT:R59:NA:208</td>
+<td align="right">2634</td>
+<td align="right">63895.59</td>
+<td align="left">59c</td>
+<td align="left">59c208</td>
+<td align="right">45</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59rf_RSEM2.csv</td>
+<td align="left">R59RF</td>
+<td align="left">R59</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59RF:R59:NA:208</td>
+<td align="right">1692</td>
+<td align="right">25516.88</td>
+<td align="left">59r</td>
+<td align="left">59r208</td>
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG72Ag_RSEM2.csv</td>
+<td align="left">R72AG</td>
+<td align="left">R72</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72AG:R72:NA:208</td>
+<td align="right">3841</td>
+<td align="right">219173.33</td>
+<td align="left">72a</td>
+<td align="left">72a208</td>
+<td align="right">486</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG72cit_RSEM2.csv</td>
+<td align="left">R72CIT</td>
+<td align="left">R72</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72CIT:R72:NA:208</td>
+<td align="right">74</td>
+<td align="right">728.80</td>
+<td align="left">72c</td>
+<td align="left">72c208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG72rf_RSEM2.csv</td>
+<td align="left">R72RF</td>
+<td align="left">R72</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72RF:R72:NA:208</td>
+<td align="right">2396</td>
+<td align="right">227378.19</td>
+<td align="left">72r</td>
+<td align="left">72r208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+</tbody></table>
+
+<pre><code class="r">kable(dcast.data.table(cd, id +subtype ~ treatment))
+</code></pre>
+
+<pre><code>## Using &#39;Isotype&#39; as value column. Use &#39;value.var&#39; to override
+</code></pre>
+
+<pre><code>## Aggregate function missing, defaulting to &#39;length&#39;
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left">id</th>
+<th align="left">subtype</th>
+<th align="right">AG</th>
+<th align="right">BTK</th>
+<th align="right">CIT</th>
+<th align="right">RF</th>
+<th align="right">none</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">235</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R1</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R26</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R4</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">188</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R48</td>
+<td align="left">NA</td>
+<td align="right">189</td>
+<td align="right">0</td>
+<td align="right">144</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R59</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R72</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+<p>Number of wells per ID and subtype (deduplicated)</p>
+
+<pre><code class="r">with(subset(cd, is.na(IgM)), table(id, treatment))
+</code></pre>
+
+<pre><code>##      treatment
+## id    BTK CIT none
+##   235   0   0    8
+##   832   4   0    4
+##   833   4   0    4
+##   F     0   0   45
+##   R48   0   1    0
+</code></pre>
+
+<p>Merge with isotype info</p>
+
+<pre><code class="r">files &lt;- normalizeFiles(list.files(file.path(dataDir, &#39;RSEM Tables&#39;, &#39;Pre-deduplication RSEM&#39;), pattern = &#39;rsem_count_matrix&#39;, full.names=TRUE, recursive=TRUE))
+radup &lt;- loadFilesIntoMast(files)
+cd &lt;- as.data.table(radup$cData)
+cd[is.na(id) | is.na(treatment)]
+</code></pre>
+
+<pre><code>## Empty data.table (0 rows) of 19 cols: id,treatment,wellID,rawid,subtype,ncells...
+</code></pre>
+
+<pre><code class="r">cd[!str_detect(rawid, fixed(id))]
+</code></pre>
+
+<pre><code>##      id treatment wellID rawid subtype ncells
+##   1:  F      none    304     M       M      1
+##   2:  F      none    305     M       M      1
+##   3:  F      none    306     M       M      1
+##   4:  F      none    307     M       M      1
+##   5:  F      none    312     M       M      1
+##                                     file   wellKey ngeneson    counts
+##   1: rsem_count_matrix_f_235sc_RSEM1.csv M:F:M:304      906   5731.55
+##   2: rsem_count_matrix_f_235sc_RSEM1.csv M:F:M:305      593   4340.53
+##   3: rsem_count_matrix_f_235sc_RSEM1.csv M:F:M:306     2136 269676.14
+##   4: rsem_count_matrix_f_235sc_RSEM1.csv M:F:M:307      373   1398.24
+##   5: rsem_count_matrix_f_235sc_RSEM1.csv M:F:M:312     1781 142000.60
+##      fname   cellID IgM IgD IgG IgE IgA Subset Isotype
+##   1:   235 235sc304   1   0   3   0   0      M       G
+##   2:   235 235sc305   0   0   0   0   4      M       A
+##   3:   235 235sc306   0   0   0   0   0      M unknown
+##   4:   235 235sc307   0   0   0   0   0      M unknown
+##   5:   235 235sc312   0   0   1   0   4      M       A
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 6 rows ]
+</code></pre>
+
+<pre><code class="r">cd[id==&#39;F&#39; &amp; is.na(subtype)]
+</code></pre>
+
+<pre><code>##      id treatment wellID rawid subtype ncells
+##   1:  F        AG    208   FAG      NA      1
+##   2:  F        AG    209   FAG      NA      1
+##   3:  F        AG    210   FAG      NA      1
+##   4:  F        AG    211   FAG      NA      1
+##   5:  F        AG    212   FAG      NA      1
+##                                   file      wellKey ngeneson     counts
+##   1: rsem_count_matrix_FCHAg_RSEM1.csv FAG:F:NA:208      530   19999.99
+##   2: rsem_count_matrix_FCHAg_RSEM1.csv FAG:F:NA:209      323   14534.34
+##   3: rsem_count_matrix_FCHAg_RSEM1.csv FAG:F:NA:210      143    3638.14
+##   4: rsem_count_matrix_FCHAg_RSEM1.csv FAG:F:NA:211       78    2308.88
+##   5: rsem_count_matrix_FCHAg_RSEM1.csv FAG:F:NA:212      161    3528.01
+##      fname cellID IgM IgD IgG IgE IgA Subset Isotype
+##   1:    Fa  Fa208   0   0  65   0   0     NA      NA
+##   2:    Fa  Fa209   0   0   0   0   0     NA      NA
+##   3:    Fa  Fa210   0   0   0   0   0     NA      NA
+##   4:    Fa  Fa211   0   0   0   0   0     NA      NA
+##   5:    Fa  Fa212   0   0   1   0   0     NA      NA
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 6 rows ]
+</code></pre>
+
+<p>Inferred IDs (duplicates)</p>
+
+<pre><code class="r">kable(cd[,c(.SD[1,], nwells=.N),keyby=list(file, rawid)])
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left">file</th>
+<th align="left">rawid</th>
+<th align="left">id</th>
+<th align="left">treatment</th>
+<th align="left">wellID</th>
+<th align="left">subtype</th>
+<th align="right">ncells</th>
+<th align="left">wellKey</th>
+<th align="right">ngeneson</th>
+<th align="right">counts</th>
+<th align="left">fname</th>
+<th align="left">cellID</th>
+<th align="right">IgM</th>
+<th align="right">IgD</th>
+<th align="right">IgG</th>
+<th align="right">IgE</th>
+<th align="right">IgA</th>
+<th align="left">Subset</th>
+<th align="left">Isotype</th>
+<th align="right">nwells</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">rsem_count_matrix_235B_RSEM1.csv</td>
+<td align="left">235</td>
+<td align="left">235</td>
+<td align="left">none</td>
+<td align="left">225</td>
+<td align="left">P</td>
+<td align="right">1000</td>
+<td align="left">235:235:P:225</td>
+<td align="right">14855</td>
+<td align="right">7049389.07</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_235B_RSEM1.csv</td>
+<td align="left">235-1</td>
+<td align="left">235</td>
+<td align="left">none</td>
+<td align="left">273</td>
+<td align="left">P</td>
+<td align="right">1000</td>
+<td align="left">235-1:235:P:273</td>
+<td align="right">12160</td>
+<td align="right">1105615.19</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_832bulk_withBTK_RSEM1.csv</td>
+<td align="left">832</td>
+<td align="left">832</td>
+<td align="left">none</td>
+<td align="left">281</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">832:832:M:281</td>
+<td align="right">12023</td>
+<td align="right">2829071.58</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_833bulk_withBTK_RSEM1.csv</td>
+<td align="left">833</td>
+<td align="left">833</td>
+<td align="left">none</td>
+<td align="left">280</td>
+<td align="left">M</td>
+<td align="right">1000</td>
+<td align="left">833:833:M:280</td>
+<td align="right">10439</td>
+<td align="right">1297422.35</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_FCHAg_RSEM1.csv</td>
+<td align="left">FAG</td>
+<td align="left">F</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">FAG:F:NA:208</td>
+<td align="right">530</td>
+<td align="right">19999.99</td>
+<td align="left">Fa</td>
+<td align="left">Fa208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">65</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_JG26Ag_RSEM1.csv</td>
+<td align="left">R26AG</td>
+<td align="left">R26</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26AG:R26:NA:208</td>
+<td align="right">4963</td>
+<td align="right">1744702.25</td>
+<td align="left">26a</td>
+<td align="left">26a208</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">46</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_JG26rf_RSEM1.csv</td>
+<td align="left">R26RF</td>
+<td align="left">R26</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26RF:R26:NA:208</td>
+<td align="right">2340</td>
+<td align="right">255342.03</td>
+<td align="left">26r</td>
+<td align="left">26r208</td>
+<td align="right">55</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_JG72Ag_RSEM1.csv</td>
+<td align="left">R72AG</td>
+<td align="left">R72</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72AG:R72:NA:208</td>
+<td align="right">3635</td>
+<td align="right">535366.77</td>
+<td align="left">72a</td>
+<td align="left">72a208</td>
+<td align="right">486</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_JG72RF_RSEM1.csv</td>
+<td align="left">R72RF</td>
+<td align="left">R72</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72RF:R72:NA:208</td>
+<td align="right">2410</td>
+<td align="right">412312.05</td>
+<td align="left">72r</td>
+<td align="left">72r208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_R1Ag_RSEM1.csv</td>
+<td align="left">R1AG</td>
+<td align="left">R1</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R1AG:R1:NA:208</td>
+<td align="right">2263</td>
+<td align="right">26041.37</td>
+<td align="left">1a</td>
+<td align="left">1a208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_R48Ag_RSEM1.csv</td>
+<td align="left">R48AG</td>
+<td align="left">R48</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R48AG:R48:NA:208</td>
+<td align="right">4288</td>
+<td align="right">181487.92</td>
+<td align="left">48a</td>
+<td align="left">48a208</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">189</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_R48cit_RSEM1.csv</td>
+<td align="left">R48CIT</td>
+<td align="left">R48</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R48CIT:R48:NA:208</td>
+<td align="right">3974</td>
+<td align="right">216832.28</td>
+<td align="left">48c</td>
+<td align="left">48c208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">7</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">144</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_R4Ag_RSEM1.csv</td>
+<td align="left">R4AG</td>
+<td align="left">R4</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R4AG:R4:NA:208</td>
+<td align="right">3869</td>
+<td align="right">217133.82</td>
+<td align="left">4a</td>
+<td align="left">4a208</td>
+<td align="right">185</td>
+<td align="right">0</td>
+<td align="right">42</td>
+<td align="right">0</td>
+<td align="right">22</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_R4rf_RSEM1.csv</td>
+<td align="left">R4RF</td>
+<td align="left">R4</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R4RF:R4:NA:208</td>
+<td align="right">3008</td>
+<td align="right">444974.79</td>
+<td align="left">4r</td>
+<td align="left">4r208</td>
+<td align="right">86</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM1.csv</td>
+<td align="left">M</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">304</td>
+<td align="left">M</td>
+<td align="right">1</td>
+<td align="left">M:F:M:304</td>
+<td align="right">906</td>
+<td align="right">5731.55</td>
+<td align="left">235</td>
+<td align="left">235sc304</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">M</td>
+<td align="left">G</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM1.csv</td>
+<td align="left">N</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">212</td>
+<td align="left">N</td>
+<td align="right">1</td>
+<td align="left">N:F:N:212</td>
+<td align="right">3002</td>
+<td align="right">206405.80</td>
+<td align="left">235</td>
+<td align="left">235sc212</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">N</td>
+<td align="left">M</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM1.csv</td>
+<td align="left">P</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">208</td>
+<td align="left">P</td>
+<td align="right">1</td>
+<td align="left">P:F:P:208</td>
+<td align="right">3532</td>
+<td align="right">275502.30</td>
+<td align="left">235</td>
+<td align="left">235sc208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">61</td>
+<td align="left">P</td>
+<td align="left">A</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_235sc_RSEM1.csv</td>
+<td align="left">T</td>
+<td align="left">F</td>
+<td align="left">none</td>
+<td align="left">308</td>
+<td align="left">T</td>
+<td align="right">1</td>
+<td align="left">T:F:T:308</td>
+<td align="right">2304</td>
+<td align="right">164164.96</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59Ag_RSEM1.csv</td>
+<td align="left">R59AG</td>
+<td align="left">R59</td>
+<td align="left">AG</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59AG:R59:NA:208</td>
+<td align="right">3762</td>
+<td align="right">179750.17</td>
+<td align="left">59a</td>
+<td align="left">59a208</td>
+<td align="right">11</td>
+<td align="right">64</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59cit_RSEM1.csv</td>
+<td align="left">R59CIT</td>
+<td align="left">R59</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59CIT:R59:NA:208</td>
+<td align="right">2573</td>
+<td align="right">104045.24</td>
+<td align="left">59c</td>
+<td align="left">59c208</td>
+<td align="right">45</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG59rf_RSEM1.csv</td>
+<td align="left">R59RF</td>
+<td align="left">R59</td>
+<td align="left">RF</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R59RF:R59:NA:208</td>
+<td align="right">1657</td>
+<td align="right">37330.49</td>
+<td align="left">59r</td>
+<td align="left">59r208</td>
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_JG72cit_RSEM1.csv</td>
+<td align="left">R72CIT</td>
+<td align="left">R72</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R72CIT:R72:NA:208</td>
+<td align="right">80</td>
+<td align="right">1813.27</td>
+<td align="left">72c</td>
+<td align="left">72c208</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">rsem_count_matrix_f_R26cit_RSEM1.csv</td>
+<td align="left">R26CIT</td>
+<td align="left">R26</td>
+<td align="left">CIT</td>
+<td align="left">208</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="left">R26CIT:R26:NA:208</td>
+<td align="right">4212</td>
+<td align="right">92898.81</td>
+<td align="left">26c</td>
+<td align="left">26c208</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">109</td>
+<td align="right">12</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+</tr>
+</tbody></table>
+
+<pre><code class="r">kable(dcast.data.table(cd, id +subtype ~ treatment))
+</code></pre>
+
+<pre><code>## Using &#39;Isotype&#39; as value column. Use &#39;value.var&#39; to override
+</code></pre>
+
+<pre><code>## Aggregate function missing, defaulting to &#39;length&#39;
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left">id</th>
+<th align="left">subtype</th>
+<th align="right">AG</th>
+<th align="right">BTK</th>
+<th align="right">CIT</th>
+<th align="right">RF</th>
+<th align="right">none</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">235</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">235</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">832</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">833</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">M</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">N</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">P</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">T</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">NA</td>
+<td align="right">188</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R1</td>
+<td align="left">NA</td>
+<td align="right">190</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R26</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R4</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">188</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R48</td>
+<td align="left">NA</td>
+<td align="right">189</td>
+<td align="right">0</td>
+<td align="right">144</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R59</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">R72</td>
+<td align="left">NA</td>
+<td align="right">186</td>
+<td align="right">0</td>
+<td align="right">186</td>
+<td align="right">186</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+<p>Number of wells per ID and subtype (duplicates)</p>
+
+<pre><code class="r">with(subset(cd, is.na(IgM)), table(id, treatment))
+</code></pre>
+
+<pre><code>##      treatment
+## id    BTK CIT none
+##   235   0   0    8
+##   832   4   0    4
+##   833   3   0    4
+##   F     0   0   45
+##   R48   0   1    0
+</code></pre>
+
+<p>Merge with isotype info</p>
+
+<pre><code class="r">## Line up common samples to compare pre-and-post deduplicated
+commonWell &lt;- intersect(radup$cData$wellKey, radedup$cData$wellKey)
+commonPid &lt;- intersect(radup$fData$gene_id, radedup$fData$gene_id)
+common
+commonSca &lt;- commonSca[commonWell,commonPid]
+commonSca &lt;- addlayer(commonSca, &#39;dup&#39;)
+layer(commonSca) &lt;- &#39;dup&#39;
+exprs(commonSca) &lt;- exprs(radup)[commonWell,commonPid]
+
+sca &lt;- FromMatrix(&#39;SingleCellAssay&#39;, EE, cData=sampleSheet, fData=geneid)
+sca &lt;- subset(sca, !(rawid %in% c(&#39;empty&#39;, &#39;ercc&#39;)))
+sca
+</code></pre>
+
+</body>
+
+</html>
