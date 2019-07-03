@@ -21,3 +21,7 @@ These objects are lists of length 3, containing members `exprs` (expression arra
 
 If you aren't running R, you can browse under
 `RSEM Tables/` to find the pre- and post- deduplicated TPM and count tables.
+
+## SRA
+
+If want the .fastq, browse to [the SRA project page](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA487301).
