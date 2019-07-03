@@ -1,6 +1,6 @@
 # T Cell–Dependent Affinity Maturation and Innate Immune Pathways Differentially Drive Autoreactive B Cell Responses in Rheumatoid Arthritis
 
-Processed scRNAseq data, flow cytometry data, and analysis scripts
+Processed scRNAseq data, flow cytometry data, and analysis scripts to support [T Cell–Dependent Affinity Maturation and Innate Immune Pathways Differentially Drive Autoreactive B Cell Responses in Rheumatoid Arthritis](https://www.ncbi.nlm.nih.gov/pubmed/29855173) from Lu, McDavid, Kongpachith, Lingampali, Glanville, Ju, Gottardo and Robinson, 2018.
 
 ## Installation instructions
 Clone this repo and in R run
